@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+*
+{
+	color: #f2f2f2;
+}
+
+body
+{
+	font-family: 'Quicksand', sans-serif;
+	background-image: url('../img/paper_boat.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+a
+{
+	color: #f2f2f2;
+}
+
+.text-up
+{
+	color: #800000;
+}
+
+.bg-up
+{
+	background-color: #800000;
+	color: #fff;
+}
+
+a:hover, .bg-up:hover
+{
+	color: #ffcccc;
+}

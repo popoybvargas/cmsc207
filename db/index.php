@@ -1,1 +1,0 @@
-<?php $conn = new mysqli('localhost', 'cmsc207', 'r3d-foLds', 'cmsc207'); ?>
