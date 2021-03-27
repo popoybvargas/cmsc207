@@ -2,34 +2,195 @@
 
 *
 {
+	font-size: 1.1rem;
 	color: #f2f2f2;
+	border: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body
 {
 	font-family: 'Quicksand', sans-serif;
-	background-image: url('../img/paper_boat.jpg');
-	background-repeat: no-repeat;
+	background: url('../img/paper_boat.jpg') no-repeat #275197;
 	background-size: cover;
+}
+
+header
+{
+	font-size: 2rem;
+	margin-top: 10px;
+	/* text-align: center; */
 }
 
 a
 {
 	color: #f2f2f2;
+	text-decoration: none;
 }
 
-.text-up
+a:hover
 {
-	color: #800000;
+	color: #ffe66d;
 }
 
-.bg-up
+small, small *
 {
-	background-color: #800000;
-	color: #fff;
+	font-size: 0.8rem;
 }
 
-a:hover, .bg-up:hover
+.container
 {
-	color: #ffcccc;
+	width: 100vw;
+	height: 100vh;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.box.flex
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.card
+{
+	margin-top: 40px;
+	width: 320px;
+	border: solid 1px #f2f2f2;
+	border-radius: 8px;
+	box-shadow: 2px 2px rgba(128, 128, 128, 0.5);
+	padding: 20px;
+}
+
+.card.box.flex > *
+{
+	flex-basis: 100%;
+}
+
+.card-header
+{
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding-bottom: 25px;
+}
+
+.form-input
+{
+	width: 100%;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 1rem;
+	color: #000033;
+}
+
+.form-input-sm
+{
+	width: 95%;
+	border-radius: 3px;
+	padding: 5px 10px;
+	font-size: 0.9rem;
+	color: #000033;
+	text-align: center;
+}
+
+.btn
+{
+	padding: 10px 15px;
+	border-radius: 5px;
+	box-shadow: 1px 1px rgba(242, 242, 242, 0.2);
+	margin-bottom: 10px;
+}
+
+.btn-sm
+{
+	font-size: 0.9rem;
+}
+
+.btn-xs
+{
+	font-size: 0.7rem;
+	padding: 5px 10px;
+}
+
+.btn-primary
+{
+	background-color: #275197;
+	color: #f2f2f2;
+}
+
+.btn-primary:hover
+{
+	background-color: #86BBD8;
+	color: #2F4858;
+	transition: background-color 300ms linear;
+}
+
+.btn-muted
+{
+	opacity: 0.5;
+}
+
+.table
+{
+	border: 0;
+	border-collapse: separate;
+	border-spacing: 0 5px;
+	margin-top: 30px;
+	width: 100%;
+}
+
+.table *
+{
+	font-size: 0.9rem;
+}
+
+.table thead tr th
+{
+	border-bottom: solid 1px #f2f2f2;
+	border-collapse: separate;
+	border-spacing: 5px 5px;
+	padding-bottom: 10px;
+}
+
+.table tbody tr td
+{
+	padding-top: 10px;
+}
+
+.text-center
+{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text-right
+{
+	text-align: right;
+	margin-left: auto;
+}
+
+.text-danger
+{
+	color: #ffb2b2;
+}
+
+.text-muted
+{
+	opacity: 0.8;
+}
+
+.message-error
+{
+	margin-bottom: 20px;
+}
+
+.hidden
+{
+	display: none;
 }

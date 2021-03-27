@@ -42,40 +42,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 ?>
 
-<div class="row">
-	<div class="card mt-3 col-md-4 offset-md-4 p-0">
-		<div class="card-header text-up">
+<div class="box flex">
+	<div class="card">
+		<div class="card-header">
 			Sign-in
 		</div>
 		<div class="card-body">
-			<form class="align-items-center justify-content-center" method="POST">
-				<?php
-
-				if (isset($error) && $error != '')
-				{
-					echo '<div class="col-12">';
-					echo "<small class='text-danger'>$error</small>";
-					echo '</div>';
-				}
-
-				?>
-				<div class="col-12">
-					<label for="email" class="visually-hidden">Email:</label>
-					<input type="email" class="form-control m-2" id="email" name="email" placeholder="Email" required>
+			<div class="message-error text-center <?php if (isset($error) && $error != '') { echo ''; } else { echo 'hidden'; } ?>">
+				<small class="text-danger">
+					<?= $error; ?>
+				</small>
+			</div>
+			<form method="POST">
+				<div>
+					<input type="email" class="form-input" id="email" name="email" placeholder="Email" required>
 				</div>
-				<div class="col-12">
-					<label for="password" class="visually-hidden">Password:</label>
-					<input type="password" class="form-control m-2" id="password" name="password" placeholder="Password" required>
+				<div">
+					<input type="password" class="form-input" id="password" name="password" placeholder="Password" required>
 				</div>
-				<div class="col-12">
-					<button type="submit" class="btn bg-up">Login</button>
-				</div>
-				<div class="col-12 mt-2">
-					<small class="text-muted">No account yet? <a class="text-muted" href="register.php">Register</a></small>
+				<div class="text-center">
+					<button type="submit" class="btn btn-primary">Login</button>
 				</div>
 			</form>
-		</div>
-	</div>
-</div>
+			<div class="text-center">
+				<small class="text-muted">No account yet? <a href="register.php">Register</a></small>
+			</div>
+		</div><!-- .card-body -->
+	</div><!-- .card -->
+</div><!-- .box.flex -->
 
 <?php include './includes/footer.php'; ?>

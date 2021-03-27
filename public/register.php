@@ -54,50 +54,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 ?>
 
-<div class="row">
-	<div class="card mt-3 col-md-4 offset-md-4 p-0">
+<div class="box flex">
+	<div class="card">
 		<div class="card-header text-up">
 			Signup
 		</div>
-		<div class="card-body">
-			<form class="align-items-center justify-content-center" method="POST">
-				<?php
-
-				if (isset($error) && $error != '')
-				{
-					echo '<div class="col-12">';
-					echo "<small class='text-danger'>$error</small>";
-					echo '</div>';
-				}
-
-				?>
-				<div class="col-12">
-					<label for="name" class="visually-hidden">Name:</label>
-					<input type="text" class="form-control m-2" id="name" name="name" placeholder="Name" value="<?= $name ?>" required>
+		<div class="card-body text-center">
+			<div class="message-error text-center <?php if (isset($error) && $error != '') { echo ''; } else { echo 'hidden'; } ?>">
+				<small class="text-danger">
+					<?= $error; ?>
+				</small>
+			</div>
+			<form method="POST">
+				<div>
+					<input type="text" class="form-input" id="name" name="name" placeholder="Name" value="<?= $name ?>" required>
 				</div>
-				<div class="col-12">
-					<label for="phone" class="visually-hidden">Phone:</label>
-					<input type="text" class="form-control m-2" id="phone" name="phone" placeholder="Phone" value="<?= $phone ?>">
+				<div>
+					<input type="text" class="form-input" id="phone" name="phone" placeholder="Phone" value="<?= $phone ?>">
 				</div>
-				<div class="col-12">
-					<label for="email" class="visually-hidden">Email:</label>
-					<input type="email" class="form-control m-2" id="email" name="email" placeholder="Email" value="<?= $email ?>" required>
+				<div>
+					<input type="email" class="form-input" id="email" name="email" placeholder="Email" value="<?= $email ?>" required>
 				</div>
-				<div class="col-12">
-					<label for="password" class="visually-hidden">Password:</label>
-					<input type="password" class="form-control m-2" id="password" name="password" placeholder="Password" required>
+				<div>
+					<input type="password" class="form-input" id="password" name="password" placeholder="Password" required>
 				</div>
-				<div class="col-12">
-					<label for="passwordConfirm" class="visually-hidden">Confirm Password:</label>
-					<input type="password" class="form-control m-2" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required>
+				<div>
+					<input type="password" class="form-input" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required>
 				</div>
-				<div class="col-12">
-					<button type="submit" class="btn bg-up">Register</button>
-				</div>
-				<div class="col-12 mt-2">
-					<small class="text-muted">Already have an account? <a class="text-muted" href="/">Login</a></small>
+				<div>
+					<button type="submit" class="btn btn-primary">Register</button>
 				</div>
 			</form>
+			<div class="text-center">
+				<small class="text-muted">Already have an account? <a class="text-muted" href="/">Login</a></small>
+			</div>
 		</div>
 	</div>
 </div>
