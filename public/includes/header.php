@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CMSC 207</title>
 	<base href="/">
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/php-mysql.css">
 </head>
 <body>
 	<div class="container">
