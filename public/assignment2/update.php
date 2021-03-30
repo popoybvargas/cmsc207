@@ -1,6 +1,6 @@
 <?php
 
-require '../private/autoload.php';
+require 'private/autoload.php';
 
 $id = $_POST['id'];
 $name = sanitize($_POST['name']);
@@ -11,6 +11,6 @@ $query = "UPDATE users SET name='$name', phone='$phone', email='$email' WHERE id
 $result = $db->query($query);
 $db->close();
 
-header('location: /dashboard.php');
+header('location: /assignment2/dashboard.php');
 
 ?>

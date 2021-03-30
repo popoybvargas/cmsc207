@@ -1,6 +1,6 @@
 <?php
 
-require '../private/autoload.php';
+require 'private/autoload.php';
 
 $id = $_GET['id'];
 $query = "SELECT email FROM users WHERE id=$id LIMIT 1";
@@ -30,6 +30,6 @@ if ($db->query($query))
 	}
 }
 
-header('location: /dashboard.php');
+header('location: /assignment2/dashboard.php');
 
 ?>

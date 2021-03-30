@@ -1,10 +1,10 @@
 <?php
 
-include './includes/header.php';
+include stream_resolve_include_path('includes/header.php');
 
 if (isset($_SESSION['email']) && $_SESSION['email'])
 {
-	header('location: /dashboard.php');
+	header('location: /assignment2/dashboard.php');
 	die;
 }
 
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			if (password_verify($password, $user['password']))
 			{
 				$_SESSION['email'] = $user['email'];
-				header('location: /dashboard.php');
+				header('location: /assignment2/dashboard.php');
 				die;
 			}
 		}
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		</div>
 		<div class="card-body">
 			<div class="message-error text-center <?php if (isset($error) && $error != '') { echo ''; } else { echo 'hidden'; } ?>">
-				<small class="text-danger">
+				<small class="text-msg">
 					<?= $error; ?>
 				</small>
 			</div>
@@ -61,11 +61,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 					<input type="password" class="form-input" id="password" name="password" placeholder="Password" required>
 				</div>
 				<div class="text-center">
-					<button type="submit" class="btn btn-primary">Login</button>
+					<button type="submit" class="btn btn-secondary">Login</button>
 				</div>
 			</form>
 			<div class="text-center">
-				<small class="text-muted">No account yet? <a href="register.php">Register</a></small>
+				<small class="text-tertiary text-muted">No account yet? <a href="register.php">Register</a></small>
 			</div>
 		</div><!-- .card-body -->
 	</div><!-- .card -->

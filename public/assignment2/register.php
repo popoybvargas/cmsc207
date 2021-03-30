@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$db->query($query);
 		$db->close();
 
-		header('location: /');
+		header('location: /assignment2');
 		die;
 	}
 }
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		</div>
 		<div class="card-body text-center">
 			<div class="message-error text-center <?php if (isset($error) && $error != '') { echo ''; } else { echo 'hidden'; } ?>">
-				<small class="text-danger">
+				<small class="text-msg">
 					<?= $error; ?>
 				</small>
 			</div>
@@ -82,11 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 					<input type="password" class="form-input" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required>
 				</div>
 				<div>
-					<button type="submit" class="btn btn-primary">Register</button>
+					<button type="submit" class="btn btn-secondary">Register</button>
 				</div>
 			</form>
 			<div class="text-center">
-				<small class="text-muted">Already have an account? <a class="text-muted" href="/">Login</a></small>
+				<small class="text-muted">Already have an account? <a class="text-muted" href="/assignment2">Login</a></small>
 			</div>
 		</div>
 	</div>

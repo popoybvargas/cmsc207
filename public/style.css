@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body
+{
+  /* background-color: #eee; */
+  background-color: #fffffa;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  color: #800000;
+}
+
+nav
+{
+  background-color: #f7fbf7;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  height: 50px;
+  text-align: center;
+  display: flex;
+}
+
+nav a
+{
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #800000; 
+  transition: all 0.2s;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a:hover
+{
+  background: #800000;
+  color: white;
+}
+
+.active
+{
+  border-bottom: 3px solid #008000;
+  padding-top: 3px;
+  color: #008000;
+}
+
+main
+{
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 1900px;
+}
+
+main .header
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+iframe
+{
+  width: 90vw;
+  margin-bottom: 20px;
+}
+
+h1, h2
+{
+  margin:  0;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+main img
+{
+  padding-top: 15px;
+}
+
+footer
+{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 1px rgba(241, 188, 13, 0.25);
+}
+
+a
+{
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #800000;
+}
+
+a:hover
+{
+  color: #008000;
+}

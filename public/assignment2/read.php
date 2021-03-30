@@ -14,7 +14,7 @@ while ($row = $result->fetch_assoc())
 		echo '<td><input type="text" class="form-input-sm" name="name" value="' . $row['name'] . '"></td>';
 		echo '<td><input type="text" class="form-input-sm" name="phone" value="' . $row['phone'] . '"></td>';
 		echo '<td><input type="email" class="form-input-sm" name="email" value="' . $row['email'] . '"></td>';
-		echo '<td><button type="submit" class="btn btn-xs btn-primary">UPDATE</button></td>';
+		echo '<td><button type="submit" class="btn btn-xs btn-secondary">UPDATE</button></td>';
 		echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
 		echo '</form>';
 	}
@@ -23,7 +23,7 @@ while ($row = $result->fetch_assoc())
 		echo '<td>' . $row['name'] . '</td>';
 		echo '<td>' . $row['phone'] . '</td>';
 		echo '<td>' . $row['email'] . '</td>';
-		echo '<td><a href="/dashboard.php?id=' . $row['id'] . '">UPDATE</a>&emsp;|&emsp;<a class="text-danger" href="/delete.php?id=' . $row['id'] . '">DELETE</a></td>';
+		echo '<td><a href="/assignment2/dashboard.php?id=' . $row['id'] . '" class="text-secondary">UPDATE</a>&emsp;|&emsp;<a href="/assignment2/delete.php?id=' . $row['id'] . '" class="text-tertiary text-muted">DELETE</a></td>';
 	}
 	echo '</tr>';
 }
