@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 					<?= $error; ?>
 				</small>
 			</div>
-			<form method="POST">
+			<form method="POST" autocomplete="off">
 				<div>
 					<input type="email" class="form-input" id="email" name="email" value="<?= isset($email) ? $email : '' ?>" placeholder="Email" required>
 				</div>

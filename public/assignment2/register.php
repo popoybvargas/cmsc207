@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 					<?= $error; ?>
 				</small>
 			</div>
-			<form method="POST">
+			<form method="POST" autocomplete="off">
 				<div>
 					<input type="text" class="form-input" id="name" name="name" placeholder="Name" value="<?= $name ?>" required>
 				</div>
