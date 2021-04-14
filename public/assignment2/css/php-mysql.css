@@ -119,7 +119,7 @@ small, small *
 .card
 {
 	margin-top: 40px;
-	width: 320px;
+	width: 344px;/*320px;*/
 	border: solid 1px #f2f2f2;
 	border-radius: 12px;
 	box-shadow: 1px 1px rgba(0, 128, 0, 0.8);
@@ -242,6 +242,11 @@ small, small *
 .btn-muted
 {
 	opacity: 0.5;
+}
+
+.btn-login, .btn-register
+{
+	margin-top: 20px;
 }
 
 .table

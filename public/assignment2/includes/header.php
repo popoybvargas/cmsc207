@@ -9,6 +9,7 @@
 	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 	<title>CMSC 207</title>
 	<link rel="stylesheet" href="/assignment2/css/php-mysql.css">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 	<div class="container">

@@ -16,7 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 	
-	if (!preg_match("/^[\w\-]+@[\w\-]+.[\w\-]+$/", $email))
+	if (!$_POST['g-recaptcha-response'])
+	{
+		$error = 'Please accomplish reCAPTCHA';
+	}
+	elseif (!preg_match("/^[\w\-]+@[\w\-]+.[\w\-]+$/", $email))
 	{
 		$error = 'Please enter a valid email';
 	}
@@ -48,20 +52,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			Sign-in
 		</div>
 		<div class="card-body">
-			<div class="message-error text-center <?php if (isset($error) && $error != '') { echo ''; } else { echo 'hidden'; } ?>">
+			<div class="message-error text-center <?= (isset($error) && $error != '') ? '' : 'hidden' ?>">
 				<small class="text-msg">
 					<?= $error; ?>
 				</small>
 			</div>
 			<form method="POST">
 				<div>
-					<input type="email" class="form-input" id="email" name="email" placeholder="Email" required>
+					<input type="email" class="form-input" id="email" name="email" value="<?= isset($email) ? $email : '' ?>" placeholder="Email" required>
 				</div>
-				<div">
+				<div>
 					<input type="password" class="form-input" id="password" name="password" placeholder="Password" required>
 				</div>
+				<div class="g-recaptcha" data-sitekey="6LfyAKkaAAAAAIuxxQJ0mCFhYw6Td8HyhQtgAn_I"></div>
 				<div class="text-center">
-					<button type="submit" class="btn btn-secondary">Login</button>
+					<button type="submit" class="btn btn-secondary btn-login">Login</button>
 				</div>
 			</form>
 			<div class="text-center">

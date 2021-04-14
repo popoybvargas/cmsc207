@@ -17,7 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	$query = "SELECT id FROM users WHERE email='$email'";
 	$user = $db->query($query);
 
-	if (mysqli_num_rows($user))
+	if (!$_POST['g-recaptcha-response'])
+	{
+		$error = 'Please accomplish reCAPTCHA';
+	}
+	elseif (mysqli_num_rows($user))
 	{
 		$error = "Account has already been created for $email";
 	}
@@ -70,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 					<input type="text" class="form-input" id="name" name="name" placeholder="Name" value="<?= $name ?>" required>
 				</div>
 				<div>
-					<input type="text" class="form-input" id="phone" name="phone" placeholder="Phone" value="<?= $phone ?>">
+					<input type="text" class="form-input" id="phone" name="phone" placeholder="Phone" value="<?= $phone ?>" maxlength=15>
 				</div>
 				<div>
 					<input type="email" class="form-input" id="email" name="email" placeholder="Email" value="<?= $email ?>" required>
@@ -81,8 +85,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 				<div>
 					<input type="password" class="form-input" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required>
 				</div>
+				<div class="g-recaptcha" data-sitekey="6LfyAKkaAAAAAIuxxQJ0mCFhYw6Td8HyhQtgAn_I"></div>
 				<div>
-					<button type="submit" class="btn btn-secondary">Register</button>
+					<button type="submit" class="btn btn-secondary btn-register">Register</button>
 				</div>
 			</form>
 			<div class="text-center">
@@ -91,5 +96,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		</div>
 	</div>
 </div>
+
+<script>
+
+const validChars = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '(', ')', ' ', 'Backspace', 'ArrowLeft', 'ArrowRight' ];
+
+document.getElementById('phone').addEventListener('keydown', e =>
+{
+	if (!validChars.includes(e.key)) e.returnValue = false;
+});
+
+</script>
 
 <?php include './includes/footer.php'; ?>
